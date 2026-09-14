@@ -9,7 +9,8 @@ Conv2d layer written by hand. Trained on the
 
 ## Results
 
-| Metric        | Value |
+| Metric | Value |
+|---|---|
 | Test Accuracy | 85.71% |
 | Val Accuracy (best) | 87.94% |
 | Classes | 21 |
@@ -32,7 +33,7 @@ Every layer written manually — no ResNet, no transfer learning.
 categories, 100 images per class, 256×256 pixels each.
 
 | Split | Images |
-
+|---|---|
 | Train | 1,470 (70%) |
 | Val | 315 (15%) |
 | Test | 315 (15%) |
@@ -49,7 +50,7 @@ river, runway, sparseresidential, storagetanks, tenniscourt
 ## Training Setup
 
 | Setting | Value |
-
+|---|---|
 | Optimizer | Adam (lr=1e-4) |
 | Scheduler | ReduceLROnPlateau (patience=5, factor=0.5) |
 | Loss | CrossEntropyLoss |
@@ -86,7 +87,7 @@ rather than learning new patterns.
 Most confused class pairs:
 
 | True | Predicted | Reason |
-
+|---|---|---|
 | storagetanks | baseballdiamond | Both are circular structures from above |
 | mediumresidential | denseresidential | Nearly identical layout at satellite resolution |
 | tenniscourt | parkinglot | Similar rectangular geometry and colour |
@@ -139,6 +140,8 @@ everywhere in the frame.
 │ └── gradcam/ # 21 Grad-CAM images (one per class)
 └── requirements.txt
 
+
+
 ---
 
 ## Quick Start
@@ -148,10 +151,12 @@ git clone https://github.com/yourusername/uc-merced-classifier
 cd uc-merced-classifier
 pip install -r requirements.txt
 
+# Download UC Merced dataset and place at UCMerced_LandUse/Images/
 
-python3 train.py       
-python3 evaluate.py    
-python3 gradcam.py     
+python3 train.py       # train the model
+python3 evaluate.py    # test accuracy + confusion matrix
+python3 gradcam.py     # generate Grad-CAM visualisations
 ```
 
 ---
+
