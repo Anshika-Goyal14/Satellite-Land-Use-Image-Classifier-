@@ -135,6 +135,12 @@ for epoch in range(epochs):
         print(f"  GPU memory: {torch.cuda.memory_allocated()/1024**2:.0f}MB")
 
 
+from utils import save_losses, plot_losses
+
+save_losses(train_losses, val_losses)
+plot_losses()
+
+
 
 
 
