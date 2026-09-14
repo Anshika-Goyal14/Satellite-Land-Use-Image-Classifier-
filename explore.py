@@ -12,8 +12,6 @@ import os
 from collections import Counter 
 
 
-#Exploring the Dataset -----
-
 
 path = "UCMerced_LandUse/Images"
 for root, dirs, files in os.walk(path):
@@ -44,9 +42,6 @@ for root, dirs, files in os.walk(path):
 print(class_counts)
 
 
-
-
-#Opening 5 images per class just to see familiarity ---
 '''for class_name in sorted(os.listdir(path)):
 
 
@@ -84,9 +79,6 @@ print(class_counts)
 
 
 
-
-
-#checking size of all the images 
 sizes = []
 
 
@@ -115,17 +107,13 @@ for class_name in os.listdir(path):
 print(set(sizes))
 
 
-#to get the count of each image size 
 size_counts = Counter(sizes) 
 
 
 for size, count in sorted(size_counts.items()):
-    print(f"{size}: {count}") #2056 images show the size of 256,256. the rest 44 images differ by a few pixels. 
+    print(f"{size}: {count}")   
 
 
-
-
-#outlier images -
 for class_name in os.listdir(path):
     class_path = os.path.join(path,class_name)
     if not os.path.isdir(class_path):
@@ -140,5 +128,5 @@ for class_name in os.listdir(path):
 
 
         if img.size!= (256,256):
-            print(image_path, img.size) #can resize these images 
+            print(image_path, img.size) 
 

@@ -11,7 +11,7 @@ class Model(nn.Module):
         nn.MaxPool2d(2))
 
         self.block2 = nn.Sequential(
-         nn.Conv2d(32,64,3, padding = 1),
+        nn.Conv2d(32,64,3, padding = 1),
         nn.BatchNorm2d(64),
         nn.ReLU(),
         nn.MaxPool2d(2))
@@ -52,12 +52,16 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = Model().to(device)
 
 
-
 if __name__ == "__main__":
     model = Model()
     x = torch.randn(1, 3, 128, 128)
     out = model(x)
     print(out.shape)
+
+
+
+
+
 
 
 
