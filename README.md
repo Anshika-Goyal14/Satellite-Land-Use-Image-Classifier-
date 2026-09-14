@@ -147,15 +147,15 @@ everywhere in the frame.
 ## Quick Start
 
 ```bash
-git clone https://github.com/yourusername/uc-merced-classifier
+git clone https://github.com/Anshika-Goyal14/Satellite-Land-Use-Image-Classifier-
 cd uc-merced-classifier
 pip install -r requirements.txt
 
 # Download UC Merced dataset and place at UCMerced_LandUse/Images/
 
-python3 train.py       # train the model
-python3 evaluate.py    # test accuracy + confusion matrix
-python3 gradcam.py     # generate Grad-CAM visualisations
+python3 train.py       
+python3 evaluate.py    
+python3 gradcam.py     
 ```
 
 ---
