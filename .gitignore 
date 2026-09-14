@@ -1,0 +1,4 @@
+checkpoints/
+UCMerced_LandUse/
+__pycache__/
+*.pth
